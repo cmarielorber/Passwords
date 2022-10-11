@@ -10,7 +10,7 @@ This week we were to get comfortable with JavaScript logic. I am still trying to
 
 ## Link
 
-]https://cmarielorber.github.io/Passwords/]
+[https://cmarielorber.github.io/Passwords/]
 
 ## Credits
 
