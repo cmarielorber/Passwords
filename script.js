@@ -7,13 +7,11 @@ var charList = [" ", "!", "\"", "#", "$", "%", "&", "\'", "(", ")", "*", "+", ",
 var numberList = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 // Assignment Code
-
 var generateBtn = document.querySelector("#generate");
 
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
 
 // Write password to the #password input
 function writePassword() {
@@ -21,21 +19,18 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   if (correctPrompts) {
-    var newPassword = generatePassword();
-    passwordText.value = newPassword;
+    var passPassword = generatePassword();
+    passwordText.value = passPassword;
   } else {
     passwordText.value = "";
   }
-
 }
-
 //return a random password
-function generatePassword() {
-  // logic goes here
+function generatePassword() {                      //logic here
   var password = "";
-  for (var i = 0; 1 < characterLength;) {
-    var randomPass = Math.floor(Math.random() * choiceArr.length);
-    password = password + choiceArr[randomPass];
+  for (var i = 0; 1 < characterLength; i++) {
+    var randomChar = Math.floor(Math.random() * choiceArr.length);
+    password = password + choiceArr[randomChar];
   }
   return password;
 }
@@ -43,8 +38,7 @@ function generatePassword() {
 function getPrompts() {
 
   choiceArr = [];
-
-  characterLength = parseInt(prompt("How many characters would you like your password to contain?"));
+  characterLength = parseInt(prompt("How many characters would you like your password to contain?")); //write out numbers
 
   if (isNaN(characterLength) || characterLength < 8 || characterLength > 128) {
     alert("Password must be more than 8 characters and less than 128 characters. Please try again.");
@@ -52,19 +46,19 @@ function getPrompts() {
   }
 
   if (confirm("Click OK to confirm including special characters.")) {
-    choiceArr = choiceArr.charList;
+    choiceArr = choiceArr.concat(charList);
   }
 
   if (confirm("Click OK to confirm including numeric characters.")) {
-    choiceArr = choiceArr.numberList;
+    choiceArr = choiceArr.concat(numberList);
   }
 
   if (confirm("Click OK to confirm including uppercase letters.")) {
-    choiceArr = choiceArr.upperCase;
+    choiceArr = choiceArr.concat(upperCase);
   }
 
   if (confirm("Click OK to confirm including lowercase letters.")) {
-    choiceArr = choiceArr.lowerCase;
+    choiceArr = choiceArr.concat(lowerCase);
   }
   return true;
 }
@@ -72,7 +66,7 @@ function getPrompts() {
 
 
 
-
+        //Steps
 // press link to open window
 //true or false 
 //if false then return
